@@ -1,17 +1,6 @@
-## Interfaces
-
-| No. | Requirement |
-|-----|-------------|
-| 1. | Sử dụng Framework Next.js để tạo giao diện người dùng |
-| 2. | Styling sử dụng Tailwind CSS kết hợp shadcn/ui components |
-| 3. | Hỗ trợ đa ngôn ngữ thông qua next-intl |
-| 4. | Responsive design tương thích mọi kích thước màn hình |
-
-## Assumptions
-
-| No. | Requirement |
-|-----|-------------|
-| 1. | Có thể tạm ngưng hệ thống nếu cần phải nâng cấp (thời gian bảo trì: 2-4h sáng, thông báo trước 24h) |
-| 2. | Người dùng có kết nối internet ổn định tối thiểu 5 Mbps |
-| 3. | Admin được đào tạo cơ bản trước khi vận hành hệ thống |
-| 4. | Môi trường dev, staging, production được tách biệt hoàn toàn |
+| Actor | Description |
+|-------|-------------|
+| **Admin (Chủ nhà sách)** | - Quản lý nhân viên: thêm mới, chỉnh sửa, khóa tài khoản, phân quyền.<br>- Quản lý sách: thêm mới, chỉnh sửa, xóa/ẩn, tìm kiếm, quản lý danh mục.<br>- Quản lý tồn kho: giám sát tổng quan, thiết lập giá sách.<br>- Xử lý đơn hàng: xem tổng quan, giám sát trạng thái.<br>- Quản lý khách hàng: xem danh sách, chi tiết thông tin, lịch sử mua hàng, quản lý rank.<br>- Xử lý yêu cầu: phê duyệt yêu cầu nhập hàng, xem khiếu nại khách hàng.<br>- Quản lý đánh giá: xem, giám sát đánh giá của khách hàng.<br>- Xem báo cáo thống kê: doanh thu, sách bán chạy, tồn kho, khách hàng, lợi nhuận.<br>- Cài đặt hệ thống: chính sách giảm giá (theo sách/toàn bộ), phương thức thanh toán, đơn vị vận chuyển, thông tin shop. |
+| **Nhân viên bán hàng** | - Quản lý tài khoản: đăng nhập, xem và cập nhật thông tin cá nhân, đổi mật khẩu.<br>- Tìm kiếm và hiển thị sách: xem danh sách sách, tìm kiếm sách, kiểm tra tồn kho.<br>- Xử lý đơn hàng: tạo đơn hàng trực tiếp (tại quầy), xử lý đơn hàng online, tính toán giá, xử lý thanh toán, in hóa đơn.<br>- Quản lý khách hàng: tìm kiếm thông tin, xem lịch sử mua hàng.<br>- Báo cáo ca làm: xem tổng doanh thu ca làm, số lượng đơn hàng đã xử lý, báo cáo cuối ca.<br>- Xử lý đổi trả sách: xem danh sách đổi trả, xem chi tiết yêu cầu, liên hệ đổi trả.<br>- Chat hỗ trợ: xem danh sách chat, trả lời chat khách hàng, xử lý khiếu nại.<br>- Quản lý yêu cầu: xem yêu cầu từ khách hàng, chuyển yêu cầu lên nhân viên kho, thông báo cho khách hàng.<br>- Cập nhật đơn hàng online: xem chi tiết, cập nhật trạng thái, xác nhận, hủy đơn hàng. |
+| **Nhân viên kho** | - Quản lý tài khoản: đăng nhập, xem và cập nhật thông tin cá nhân, đổi mật khẩu.<br>- Quản lý sách: hiển thị danh sách, xem chi tiết, thêm sách mới, chỉnh sửa thông tin, ẩn sách, tìm kiếm sách.<br>- Quản lý tồn kho: cập nhật số lượng tồn kho, nhập hàng, xuất hàng, kiểm kê kho.<br>- Báo cáo kho: xem sách sắp hết hàng, báo cáo tồn kho, lịch sử nhập xuất.<br>- Xử lý yêu cầu: xem yêu cầu nhập hàng từ nhân viên bán hàng, xem chi tiết, thông báo tình trạng yêu cầu.<br>- Hỗ trợ bán hàng: kiểm tra tồn kho cho nhân viên bán hàng, cập nhật trạng thái sách. |
+| **User (Khách hàng)** | - Quản lý tài khoản: đăng ký, đăng nhập, cập nhật thông tin cá nhân, xem điểm tích lũy (rank), đổi mật khẩu, đăng xuất.<br>- Xem và tìm kiếm sách: hiển thị danh sách sách, xem chi tiết, đọc thử, tìm kiếm theo tên/tác giả/thể loại, bộ lọc (giá, năm xuất bản, NXB), sắp xếp theo tiêu chí.<br>- Mua hàng: thêm vào giỏ hàng, quản lý giỏ hàng (xem, xóa, chỉnh sửa số lượng), đặt hàng.<br>- Thanh toán: nhập địa chỉ, chọn phương thức thanh toán (COD, VNPay, MoMo, ZaloPay, Viettel Money), xác nhận đặt hàng.<br>- Vận chuyển: xem đơn vị vận chuyển, chọn nhà vận chuyển.<br>- Quản lý đơn hàng: xem danh sách đơn hàng, xem chi tiết, đặt lại đơn, đánh giá đơn hàng, hủy đơn, theo dõi đơn hàng, yêu cầu đổi/trả hàng.<br>- Khuyến mãi: xem mã giảm giá, xem chi tiết mã giảm, xem xếp hạng hiện tại.<br>- Đánh giá: đánh giá sách (1-5 sao), viết nhận xét/review, xem đánh giá của khách khác.<br>- Danh sách yêu thích: thêm sách, xem danh sách, xóa sách.<br>- Hỗ trợ: chat với nhân viên, gửi phản hồi/khiếu nại.<br>- Yêu cầu nhập hàng: yêu cầu nhập sách hết hàng/sách mới, xem danh sách yêu cầu, xem chi tiết, hủy yêu cầu.<br>- Thông báo: xem danh sách thông báo, nhận thông báo giảm giá/trạng thái đơn/có hàng mới. |
